@@ -4,18 +4,6 @@ public class Saab95 extends Car implements Movable { //Subklass
 
     private boolean turboOn;
 
-    public void move(){
-
-
-    }
-    public void turnLeft(){
-
-    }
-
-    public void turnRight(){
-
-    }
-
     public String modelName; // The car model name
     
     public Saab95(){
