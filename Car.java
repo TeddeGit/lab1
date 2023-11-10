@@ -59,7 +59,6 @@ public class Car { //Superklass
         }
         else if("WEST".equals(direction)){
             direction = "SOUTH";
-
         }
         else if("SOUTH".equals(direction)){
             direction = "EAST";

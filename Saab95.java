@@ -2,7 +2,7 @@ import java.awt.*;
 
 public class Saab95 extends Car implements Movable { //Subklass
 
-    private boolean turboOn;
+    public boolean turboOn;
 
     public String modelName; // The car model name
     
@@ -15,35 +15,30 @@ public class Saab95 extends Car implements Movable { //Subklass
         stopEngine();
     }
 
-    private void setTurboOn(){
+    public void setTurboOn(){
 	    turboOn = true;
     }
 
-    private void setTurboOff(){
+    public void setTurboOff(){
 	    turboOn = false;
     }
     
-    private double speedFactor(){
+    public double speedFactor(){
         double turbo = 1;
         if(turboOn) turbo = 1.3;
         return enginePower * 0.01 * turbo;
     }
 
     public void incrementSpeed(double amount){
-        currentSpeed = getCurrentSpeed() + speedFactor() * amount;
+        if ((currentSpeed >= 0) && (currentSpeed <= enginePower)) {
+            currentSpeed = getCurrentSpeed() + speedFactor() * amount;
+        }
     }
 
     public void decrementSpeed(double amount){
-        currentSpeed = getCurrentSpeed() - speedFactor() * amount;
-    }
-    
-    // TODO fix this method according to lab pm
-    public void gas(double amount){
-        incrementSpeed(amount);
+        if ((currentSpeed >= 0) && (currentSpeed <= enginePower)) {
+            currentSpeed = getCurrentSpeed() - speedFactor() * amount;
+        }
     }
 
-    // TODO fix this method according to lab pm
-    public void brake(double amount){
-        decrementSpeed(amount);
-    }
 }
