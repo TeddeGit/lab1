@@ -3,8 +3,6 @@ import java.awt.*;
 public class Saab95 extends Car implements Movable { //Subklass
 
     public boolean turboOn;
-
-    public String modelName; // The car model name
     
     public Saab95(){
         nrDoors = 2;
