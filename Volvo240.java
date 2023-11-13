@@ -28,4 +28,16 @@ public class Volvo240 extends Car implements Movable { //Subklass
         }
     }
 
+    public void brake(double amount){
+        if (amount >= 0 && amount <= 1 && currentSpeed <= 0){
+            decrementSpeed(amount);
+        }
+    }
+
+    public void gas(double amount){
+        if (amount >= 0 && amount <= 1 && currentSpeed >= 0 ){
+            incrementSpeed(amount);
+        }
+    }
+
 }

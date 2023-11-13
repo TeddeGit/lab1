@@ -8,6 +8,7 @@ public class Car { //Superklass
     public Color color; // Color of the car
     public String modelName; // The car model name
 
+
     public int getNrDoors(){
         return nrDoors;
     }
@@ -34,6 +35,7 @@ public class Car { //Superklass
     public void stopEngine(){
         currentSpeed = 0;
     }
+
 
     String direction = "NORTH";
     double y = 0;
