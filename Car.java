@@ -2,11 +2,11 @@ import java.awt.*;
 
 public class Car { //Superklass
 
-    public int nrDoors; // Number of doors on the car
-    public double enginePower; // Engine power of the car
-    public double currentSpeed; // The current speed of the car
-    public Color color; // Color of the car
-    public String modelName; // The car model name
+    private int nrDoors; // Number of doors on the car
+    private double enginePower; // Engine power of the car
+    private double currentSpeed; // The current speed of the car
+    private Color color; // Color of the car
+    private String modelName; // The car model name
 
 
     public int getNrDoors(){
@@ -40,6 +40,50 @@ public class Car { //Superklass
     String direction = "NORTH";
     double y = 0;
     double x = 0;
+
+    public void setNrDoors(int nrDoors) {
+        this.nrDoors = nrDoors;
+    }
+
+    public void setEnginePower(double enginePower) {
+        this.enginePower = enginePower;
+    }
+
+    public void setCurrentSpeed(double currentSpeed) {
+        this.currentSpeed = currentSpeed;
+    }
+
+    public String getModelName() {
+        return modelName;
+    }
+
+    public void setModelName(String modelName) {
+        this.modelName = modelName;
+    }
+
+    public String getDirection() {
+        return direction;
+    }
+
+    public void setDirection(String direction) {
+        this.direction = direction;
+    }
+
+    public double getY() {
+        return y;
+    }
+
+    public void setY(double y) {
+        this.y = y;
+    }
+
+    public double getX() {
+        return x;
+    }
+
+    public void setX(double x) {
+        this.x = x;
+    }
 
     public void move() {
         if ("NORTH".equals(direction)) {

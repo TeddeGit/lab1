@@ -70,7 +70,7 @@ class Saab95Test {
 
     @Test
     void move() {
-        bilen2.currentSpeed = 2.0;
+        bilen2.setCurrentSpeed(2.0);
         bilen2.move();
         assertEquals(2.0, bilen2.y);
 

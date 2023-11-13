@@ -19,7 +19,7 @@ class Volvo240Test {
     @Test
     void incrementSpeed() {
         bilen.incrementSpeed(0.5);
-        assertEquals(0.625, bilen.currentSpeed);
+        assertEquals(0.625, bilen.getCurrentSpeed());
     }
 
     @Test

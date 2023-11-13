@@ -1,15 +1,17 @@
 import java.awt.*;
 
+import static java.awt.Color.red;
+
 public class Saab95 extends Car implements Movable { //Subklass
 
     public boolean turboOn;
     
     public Saab95(){
-        nrDoors = 2;
-        color = Color.red;
-        enginePower = 125;
-	    turboOn = false;
-        modelName = "Saab95";
+        setNrDoors(2);
+        setColor(red);
+        setEnginePower(125);
+	    setTurboOff();
+        setModelName("Saab95");
         stopEngine();
     }
 

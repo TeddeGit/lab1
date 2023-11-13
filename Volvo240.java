@@ -5,10 +5,10 @@ public class Volvo240 extends Car implements Movable { //Subklass
 
     private final static double trimFactor = 1.25;
     public Volvo240(){
-        nrDoors = 4;
-        color = Color.black;
-        enginePower = 100;
-        modelName = "Volvo240";
+        setNrDoors(4);
+        setColor(Color.black);
+        setEnginePower(100);
+        setModelName("Volvo240");
         stopEngine();
     }
 
@@ -23,8 +23,8 @@ public class Volvo240 extends Car implements Movable { //Subklass
     }
 
     public void decrementSpeed(double amount){
-        if ((currentSpeed >= 0) && (currentSpeed <= enginePower)) {
-            currentSpeed = Math.max(getCurrentSpeed() - speedFactor() * amount, 0); //Math.max allt < 0 så 0
+        if ((getCurrentSpeed() >= 0) && (getCurrentSpeed() <= getEnginePower())) {
+            setCurrentSpeed(Math.max(getCurrentSpeed() - speedFactor() * amount, 0)); //Math.max allt < 0 så 0
         }
     }
 
