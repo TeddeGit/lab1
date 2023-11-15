@@ -91,13 +91,13 @@ class Saab95Test {
     @Test
     void incrementSpeed() {
         bilen2.incrementSpeed(0.5);
-        assertEquals(0.625, bilen2.currentSpeed);
+        assertEquals(0.625, bilen2.getCurrentSpeed());
     }
 
     @Test
     void decrementSpeed() {
         bilen2.decrementSpeed(0.5);
-        assertEquals(-0.625, bilen2.currentSpeed);
+        assertEquals(-0.625, bilen2.getCurrentSpeed());
     }
 
     @Test

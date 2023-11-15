@@ -26,31 +26,18 @@ public class Saab95 extends Car implements Movable { //Subklass
     public double speedFactor(){
         double turbo = 1;
         if(turboOn) turbo = 1.3;
-        return enginePower * 0.01 * turbo;
+        return getEnginePower() * 0.01 * turbo;
     }
 
     public void incrementSpeed(double amount){
-        if ((currentSpeed >= 0) && (currentSpeed <= enginePower)) {
-            currentSpeed = getCurrentSpeed() + speedFactor() * amount;
+        if ((getCurrentSpeed() >= 0) && (getCurrentSpeed() <= getEnginePower())) {
+            setCurrentSpeed(getCurrentSpeed() + speedFactor() * amount);
         }
     }
 
     public void decrementSpeed(double amount){
-        if ((currentSpeed >= 0) && (currentSpeed <= enginePower)) {
-            currentSpeed = getCurrentSpeed() - speedFactor() * amount;
+        if ((getCurrentSpeed() >= 0) && (getCurrentSpeed() <= getEnginePower())) {
+            setCurrentSpeed(getCurrentSpeed() - speedFactor() * amount);
         }
     }
-
-    public void brake(double amount){
-        if (amount >= 0 && amount <= 1 && currentSpeed <= 0){
-            decrementSpeed(amount);
-        }
-    }
-
-    public void gas(double amount){
-        if (amount >= 0 && amount <= 1 && currentSpeed >= 0 ){
-            incrementSpeed(amount);
-        }
-    }
-
 }

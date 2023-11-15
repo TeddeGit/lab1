@@ -25,7 +25,7 @@ class Volvo240Test {
     @Test
     void decrementSpeed() {
         bilen.decrementSpeed(0.5);
-        assertEquals(0, bilen.currentSpeed);
+        assertEquals(0, bilen.getCurrentSpeed());
     }
 
     @Test
