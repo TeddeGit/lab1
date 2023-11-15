@@ -29,17 +29,4 @@ public class Volvo240 extends Car implements Movable { //Subklass
             setCurrentSpeed(Math.max(getCurrentSpeed() - speedFactor() * amount, 0)); //Math.max allt < 0 så 0
         }
     }
-
-    public void brake(double amount){
-        if (amount >= 0 && amount <= 1 && getCurrentSpeed() <= 0){
-            decrementSpeed(amount);
-        }
-    }
-
-    public void gas(double amount){
-        if (amount >= 0 && amount <= 1 && getCurrentSpeed() >= 0 ){
-            incrementSpeed(amount);
-        }
-    }
-
 }

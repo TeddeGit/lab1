@@ -1,6 +1,6 @@
 import java.awt.*;
 
-public class Car { //Superklass
+public abstract class Car { //Superklass
 
     private int nrDoors; // Number of doors on the car
     private double enginePower; // Engine power of the car
@@ -84,6 +84,23 @@ public class Car { //Superklass
     public void setX(double x) {
         this.x = x;
     }
+
+    protected abstract void decrementSpeed(double amount); //Lite som interface
+    protected abstract void incrementSpeed(double amount);
+
+
+    public void brake(double amount){
+        if (amount >= 0 && amount <= 1 && getCurrentSpeed() <= 0){
+            decrementSpeed(amount);
+        }
+    }
+
+    public void gas(double amount){
+        if (amount >= 0 && amount <= 1 && getCurrentSpeed() >= 0 ){
+            incrementSpeed(amount);
+        }
+    }
+
 
     public void move() {
         if ("NORTH".equals(direction)) {
