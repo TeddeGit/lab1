@@ -2,31 +2,34 @@ import java.awt.*;
 
 import static java.awt.Color.red;
 
-public class Saab95 extends Car implements Movable { //Subklass
+public class Scania extends Car implements Movable {
+    private int angle = 30;
 
-    public boolean turboOn;
-    
-    public Saab95(){
+    public Scania(){
         setNrDoors(2);
-        setColor(red);
+        setColor(Color.blue);
         setEnginePower(125);
-	    setTurboOff();
-        setModelName("Saab95");
+        setModelName("Scania");
         stopEngine();
     }
-
-    public void setTurboOn(){
-	    turboOn = true;
+    public int getAngle(){
+        return angle;
     }
 
-    public void setTurboOff(){
-	    turboOn = false;
+    public void incrementAngle(){
+        if (angle < 70 && getCurrentSpeed() == 0){
+            angle += 1;
+        }
     }
-    
+    public void decrementAngle(){
+        if (angle >= 1 && getCurrentSpeed() == 0) {
+            angle -= 1;
+        }
+
+    }
+
     public double speedFactor(){
-        double turbo = 1;
-        if(turboOn) turbo = 1.3;
-        return getEnginePower() * 0.01 * turbo;
+        return getEnginePower() * 0.05;
     }
 
     public void incrementSpeed(double amount){
@@ -48,9 +51,11 @@ public class Saab95 extends Car implements Movable { //Subklass
     }
 
     public void gas(double amount){
-        if (amount >= 0 && amount <= 1 && getCurrentSpeed() >= 0 ){
+        if (amount >= 0 && amount <= 1 && getCurrentSpeed() >= 0 && angle == 0){
             incrementSpeed(amount);
         }
     }
+
+
 
 }

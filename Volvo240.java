@@ -1,6 +1,8 @@
 import java.awt.*;
 import java.security.KeyStore;
 
+import static java.awt.Color.red;
+
 public class Volvo240 extends Car implements Movable { //Subklass
 
     private final static double trimFactor = 1.25;
@@ -13,12 +15,12 @@ public class Volvo240 extends Car implements Movable { //Subklass
     }
 
     public double speedFactor(){
-        return enginePower * 0.01 * trimFactor;
+        return getEnginePower() * 0.01 * trimFactor;
     }
 
     public void  incrementSpeed(double amount) {
-        if ((currentSpeed >= 0) && (currentSpeed <= enginePower)) {
-            currentSpeed = Math.min(getCurrentSpeed() + speedFactor() * amount, enginePower);
+        if ((getCurrentSpeed() >= 0) && (getCurrentSpeed() <= getEnginePower())) {
+            setCurrentSpeed(Math.min(getCurrentSpeed() + speedFactor() * amount, getEnginePower()));
         }
     }
 
@@ -29,13 +31,13 @@ public class Volvo240 extends Car implements Movable { //Subklass
     }
 
     public void brake(double amount){
-        if (amount >= 0 && amount <= 1 && currentSpeed <= 0){
+        if (amount >= 0 && amount <= 1 && getCurrentSpeed() <= 0){
             decrementSpeed(amount);
         }
     }
 
     public void gas(double amount){
-        if (amount >= 0 && amount <= 1 && currentSpeed >= 0 ){
+        if (amount >= 0 && amount <= 1 && getCurrentSpeed() >= 0 ){
             incrementSpeed(amount);
         }
     }
