@@ -12,21 +12,6 @@ public class Scania extends Car implements Movable {
         setModelName("Scania");
         stopEngine();
     }
-    public int getAngle(){
-        return angle;
-    }
-
-    public void incrementAngle(){
-        if (angle < 70 && getCurrentSpeed() == 0){
-            angle += 1;
-        }
-    }
-    public void decrementAngle(){
-        if (angle >= 1 && getCurrentSpeed() == 0) {
-            angle -= 1;
-        }
-
-    }
 
     public double speedFactor(){
         return getEnginePower() * 0.05;

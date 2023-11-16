@@ -6,6 +6,7 @@ import static org.junit.jupiter.api.Assertions.*;
 class ScaniaTest {
     private Scania lastbil;
 
+
     @BeforeEach
     void init() {
         lastbil  = new Scania();
