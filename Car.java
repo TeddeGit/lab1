@@ -7,7 +7,39 @@ public abstract class Car { //Superklass
         private double currentSpeed; // The current speed of the car
         private Color color; // Color of the car
         private String modelName; // The car model name
-        private double carPosition;
+        String direction;
+        private double y;
+        private double x;
+        private double length;
+        private double width;
+
+    public Car() {
+        x = 0;
+        y = 0;
+        direction = "NORTH";
+        currentSpeed = 0;
+    }
+
+    public Car(int x, int y, String direction, int currentSpeed) {
+       this.x = x;
+       this.y = y;
+       this.direction = direction;
+       this.currentSpeed = currentSpeed;
+    }
+
+    public double getWidth() {
+        return width;
+    }
+
+    public double getLength() {
+        return length;
+    }
+    public void setLength(double length){
+        this.length = length;
+    }
+    public void setWidth(double width){
+        this.width = width;
+    }
 
 
     public int getNrDoors(){
