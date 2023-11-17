@@ -4,8 +4,11 @@ import java.util.List;
 
 public class Workshop <T> {
     public List<T> cars;
+    double yWPosition; //För att sedan implementera att man vara kan lasta bilar i närheten
+    double xWPosition;
 
-    public Workshop(T car){
+
+    public Workshop(){
         this.cars = new ArrayList<>();
     }
 

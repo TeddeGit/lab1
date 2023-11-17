@@ -9,15 +9,14 @@ public class Lorry extends Truck {
     private Stack<Car> cars;
 
     private AdvancedTrailer advancedTrailer;
+
     public Lorry(){
         setNrDoors(2);
         setColor(Color.black);
         setEnginePower(100);
         setModelName("Lorry");
         stopEngine();
-        setCarPosition(0);
         cars = new Stack<>();
-
     }
 
     public double exactDistance(Car car){
@@ -29,7 +28,8 @@ public class Lorry extends Truck {
     }
 
     public void load(Car car){
-        if (advancedTrailer.getAngle() == 0 && position <= 1 && cars.size() < 8){
+        if (advancedTrailer.isDown() && !trailerFull()
+                && getLength() <= 5 && getWidth() <= 2 && carIsClose(car)) {
             cars.push(car);
             car.setY(getY()); // Skriv tester för detta
             car.setX(getX());
@@ -61,7 +61,7 @@ public class Lorry extends Truck {
     }
 
     public void tipTrailer(int angle) {
-        if (getCurrentSpeed() == 0) {
+        if (getCurrentSpeed() == 0) { //För att komma åt current speed, då den ej finns i Trailer
             advancedTrailer.tip(angle);
         }
     }
@@ -83,8 +83,8 @@ public class Lorry extends Truck {
     }
 
     public void move() {
-        super.move();
-        for (Car car : cars) {
+        super.move(); //Gör allt som den gör i superklassen
+        for (Car car : cars) { //För varje objekt av typ car i listan cars
             car.setY(getY());
             car.setX(getX());
             car.setDirection(getDirection());

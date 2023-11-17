@@ -19,4 +19,10 @@ public class Trailer {
     public int getAngle() {
         return angle;
     }
+
+    public void setAngle(int i) {
+        if (70 >= i && i >= 0){
+            angle = i;
+        }
+    }
 }
