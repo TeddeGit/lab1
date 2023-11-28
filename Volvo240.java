@@ -12,6 +12,8 @@ public class Volvo240 extends Car implements Movable { //Subklass
         setEnginePower(100);
         setModelName("Volvo240");
         stopEngine();
+        setWidth(1.86);
+        setLength(4.43);
     }
 
     public double speedFactor(){

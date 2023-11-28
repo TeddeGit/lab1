@@ -2,8 +2,9 @@ import java.awt.*;
 
 import static java.awt.Color.red;
 
-public class Scania extends Car implements Movable {
-    private int angle = 30;
+public class Scania extends Truck implements Movable {
+    private Trailer trailer; //Skapar detta en trailer?
+    private double angle = 30;
 
     public Scania(){
         setNrDoors(2);
@@ -28,19 +29,4 @@ public class Scania extends Car implements Movable {
             setCurrentSpeed(getCurrentSpeed() - speedFactor() * amount);
         }
     }
-
-    public void brake(double amount){
-        if (amount >= 0 && amount <= 1 && getCurrentSpeed() <= 0){
-            decrementSpeed(amount);
-        }
-    }
-
-    public void gas(double amount){
-        if (amount >= 0 && amount <= 1 && getCurrentSpeed() >= 0 && angle == 0){
-            incrementSpeed(amount);
-        }
-    }
-
-
-
 }

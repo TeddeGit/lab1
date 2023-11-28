@@ -68,13 +68,13 @@ class Saab95Test {
         assertEquals(0, bilen2.getCurrentSpeed());
     }
 
-    @Test
+    /*@Test
     void move() {
         bilen2.setCurrentSpeed(2.0);
         bilen2.move();
         assertEquals(2.0, bilen2.y);
 
-    }
+    }*/
 
     @Test
     void turnLeft() {

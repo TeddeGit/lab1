@@ -13,6 +13,8 @@ public class Saab95 extends Car implements Movable { //Subklass
 	    setTurboOff();
         setModelName("Saab95");
         stopEngine();
+        setWidth(1.76);
+        setLength(4.63);
     }
 
     public void setTurboOn(){

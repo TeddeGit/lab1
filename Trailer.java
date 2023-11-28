@@ -1,28 +1,18 @@
-public class Trailer {
+public class Trailer implements Ramp {
 
-
-    private int angle = 0;
+    public boolean isUp;
 
     public void tip(){
-        if (angle == 70){
-            angle = 0;
-        }else {
-            angle = 70;
+        if (getCurrentSpeed == 0) {
+            isUp = !isUp;
         }
     }
 
     public boolean isDown(){
-        return angle == 0;
+        return !isUp;
     }
 
-
-    public int getAngle() {
-        return angle;
-    }
-
-    public void setAngle(int i) {
-        if (70 >= i && i >= 0){
-            angle = i;
-        }
+    public boolean isUp(){
+        return isUp;
     }
 }

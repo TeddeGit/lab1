@@ -4,9 +4,9 @@ import java.util.Stack;
 import java.lang.Math;
 
 
-public class Lorry extends Truck {
+public class Lorry extends Truck implements Movable {
     private double position;
-    private Stack<Car> cars;
+    private Stack<Car> cars; //ANGER TYPEN SOM CAR
 
     private AdvancedTrailer advancedTrailer;
 
@@ -44,7 +44,7 @@ public class Lorry extends Truck {
         if (advancedTrailer.isDown() && !cars.empty()){
             Car car = cars.pop();
 
-            if (Objects.equals(getDirection(), "NORTH")){
+            if (Objects.equals(getDirection(), "NORTH")){ //Fråga TA
                 car.setY(getY()-10);
             }
             else if (Objects.equals(getDirection(), "EAST")){
@@ -77,8 +77,8 @@ public class Lorry extends Truck {
     }
 
     public void decrementSpeed(double amount){
-        if ((getCurrentSpeed() >= 0) && (getCurrentSpeed() <= getEnginePower())) {
-            setCurrentSpeed(getCurrentSpeed() - speedFactor() * amount);
+        if ((getCurrentSpeed() >= 0) && (getCurrentSpeed() <= getEnginePower())) { //Gör if satsen till en metod som man använder i varje if som är lika.
+            setCurrentSpeed(getCurrentSpeed() - speedFactor() * amount);            //Minskar koddduplicering ökar läsbarhet
         }
     }
 

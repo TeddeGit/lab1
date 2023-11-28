@@ -69,11 +69,6 @@ public abstract class Car { //Superklass
         currentSpeed = 0;
     }
 
-
-    String direction = "NORTH";
-    double y = 0;
-    double x = 0;
-
     public void setNrDoors(int nrDoors) {
         this.nrDoors = nrDoors;
     }
@@ -133,7 +128,6 @@ public abstract class Car { //Superklass
             incrementSpeed(amount);
         }
     }
-
 
     public void move() {
         if ("NORTH".equals(direction)) {
