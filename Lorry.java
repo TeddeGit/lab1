@@ -47,16 +47,16 @@ public class Lorry extends Truck implements Movable {
         if (advancedTrailer.isDown() && !cars.empty()){
             Car car = cars.pop();
 
-            if (Objects.equals(getDirection(), "NORTH")){ //Fråga TA
+            if ("NORTH".equals(getDirection())){ //Fråga TA
                 car.setY(getY()-10);
             }
-            else if (Objects.equals(getDirection(), "EAST")){
+            else if ("EAST".equals(getDirection())){
                 car.setX(getX()-10);
             }
-            else if (Objects.equals(getDirection(), "SOUTH")){
+            else if ("SOUTH".equals(getDirection())){
                 car.setY(getY()+10);
             }
-            else if (Objects.equals(getDirection(), "WEST")){
+            else if ("WEST".equals(getDirection())){
                 car.setX(getX()+10);
             }
         }
