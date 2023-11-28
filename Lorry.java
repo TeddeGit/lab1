@@ -10,6 +10,9 @@ public class Lorry extends Truck implements Movable {
 
     private AdvancedTrailer advancedTrailer;
 
+
+
+
     public Lorry(){
         setNrDoors(2);
         setColor(Color.black);
@@ -60,11 +63,7 @@ public class Lorry extends Truck implements Movable {
 
     }
 
-    public void tipTrailer(int angle) {
-        if (getCurrentSpeed() == 0) { //För att komma åt current speed, då den ej finns i Trailer
-            advancedTrailer.tip(angle);
-        }
-    }
+
 
     public double speedFactor(){
         return getEnginePower() * 0.05;

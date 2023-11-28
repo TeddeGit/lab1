@@ -1,5 +1,5 @@
 public interface Ramp {
-    void tip();
+
 
     boolean isDown();
 

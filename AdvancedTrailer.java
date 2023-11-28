@@ -8,8 +8,8 @@ public class AdvancedTrailer implements Ramp {
         }
     }
 
-    public void tip() {
-        if (70 >= (angle + amount) && (angle + amount) >= 0){
+    public void tip(Truck truck,int amount) {
+        if (70 >= (angle + amount) && (angle + amount) >= 0 && truck.getCurrentSpeed() == 0){
             angle += amount;
         }
     }

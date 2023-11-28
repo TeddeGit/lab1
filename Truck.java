@@ -1,10 +1,10 @@
 abstract public class Truck extends Car{
 
-    public abstract boolean isDown();
+    private Ramp ramp;
 
     @Override
     public void gas(double amount){
-        if (amount >= 0 && amount <= 1 && getCurrentSpeed() >= 0 && isDown()){
+        if (amount >= 0 && amount <= 1 && getCurrentSpeed() >= 0 && (ramp != null && ramp.isDown())){
             incrementSpeed(amount);
         }
     }
