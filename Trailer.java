@@ -2,10 +2,12 @@ public class Trailer implements Ramp {
 
     public boolean isUp;
 
-    public void tip(Truck truck){
-        if (truck.getCurrentSpeed() == 0) {
-            isUp = !isUp;
-        }
+    public void tipUp(){
+        isUp = true;
+
+    }
+    public void tipDown(){
+        isUp = false;
     }
 
 

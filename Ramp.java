@@ -5,4 +5,8 @@ public interface Ramp {
 
     boolean isUp();
 
+    void tipUp();
+
+    void tipDown();
+
 }

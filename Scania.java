@@ -3,7 +3,7 @@ import java.awt.*;
 import static java.awt.Color.red;
 
 public class Scania extends Truck implements Movable {
-    private Trailer trailer; //Skapar detta en trailer?
+
     private double angle = 30;
 
     public Scania(){
@@ -12,6 +12,7 @@ public class Scania extends Truck implements Movable {
         setEnginePower(125);
         setModelName("Scania");
         stopEngine();
+        this.ramp = new AdvancedTrailer();
     }
 
     public double speedFactor(){
@@ -29,4 +30,5 @@ public class Scania extends Truck implements Movable {
             setCurrentSpeed(getCurrentSpeed() - speedFactor() * amount);
         }
     }
+
 }
