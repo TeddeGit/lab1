@@ -4,7 +4,7 @@ import java.util.Stack;
 import java.lang.Math;
 
 
-public class Lorry extends Truck implements Movable {
+public class Lorry extends Truck {
     private double position;
     private Stack<Car> cars; //ANGER TYPEN SOM CAR
 

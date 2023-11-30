@@ -2,7 +2,7 @@ import java.awt.*;
 
 import static java.awt.Color.red;
 
-public class Scania extends Truck implements Movable {
+public class Scania extends Truck {
 
     private double angle = 30;
 

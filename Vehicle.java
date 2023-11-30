@@ -1,6 +1,6 @@
 import java.awt.*;
 
-abstract public class Vehicle {
+abstract public class Vehicle implements Movable{
     private int nrDoors; // Number of doors on the car
     private double enginePower; // Engine power of the car
     private double currentSpeed; // The current speed of the car
