@@ -7,16 +7,23 @@ public class Workshop <T extends Car> {
     double yWPosition; //För att sedan implementera att man vara kan lasta bilar i närheten
     double xWPosition;
 
+    int maxCars;
 
-    public Workshop(){
+
+    public Workshop(int maxAmountOfCars){
+        maxCars = maxAmountOfCars;
         this.cars = new ArrayList<>();
     }
 
     public void addCar(T car){
-        cars.add(car);
+        if(!workshopFull())
+            cars.add(car);
     }
 
     public void removeCar(T car){
         cars.remove(car);
+    }
+    public boolean workshopFull(){
+        return cars.size() == maxCars;
     }
 }

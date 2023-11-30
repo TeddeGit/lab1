@@ -8,7 +8,6 @@ public class Lorry extends Truck implements Movable {
     private double position;
     private Stack<Car> cars; //ANGER TYPEN SOM CAR
 
-    private AdvancedTrailer advancedTrailer;
 
 
 
@@ -20,6 +19,7 @@ public class Lorry extends Truck implements Movable {
         setModelName("Lorry");
         stopEngine();
         cars = new Stack<>();
+        this.ramp = new Trailer();
     }
 
     public double exactDistance(Car car){
@@ -31,7 +31,7 @@ public class Lorry extends Truck implements Movable {
     }
 
     public void load(Car car){
-        if (advancedTrailer.isDown() && !trailerFull()
+        if (ramp.isDown() && !trailerFull()
                 && getLength() <= 5 && getWidth() <= 2 && carIsClose(car)) {
             cars.push(car);
             car.setY(getY()); // Skriv tester för detta
@@ -44,7 +44,7 @@ public class Lorry extends Truck implements Movable {
     }
 
     public void unload(){
-        if (advancedTrailer.isDown() && !cars.empty()){
+        if (ramp.isDown() && !cars.empty()){
             Car car = cars.pop();
 
             if ("NORTH".equals(getDirection())){ //Fråga TA
